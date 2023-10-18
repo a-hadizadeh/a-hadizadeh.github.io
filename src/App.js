@@ -1,8 +1,13 @@
-function MyButton() {
+function Header() {
 	return (
-		<button>
-			I'm a button
-		</button>
+		<div>
+			<h1>
+				Ali Hadizadeh Moghadam
+			</h1>
+			<h3>
+				Computer Science MSc student @ Sharif University of Technology
+			</h3>
+		</div>
 	);
 }
 
