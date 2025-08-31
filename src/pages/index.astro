@@ -1,5 +1,13 @@
 ---
-import {COLOR_1, COLOR_2} from "./const.js"
+import {themes} from "./const/colors.js"
+const theme = themes["home"];
+const choice = theme["choice"];
+const subtheme = theme["subtheme"][choice];
+const palette = subtheme["palette"];
+const color0 = palette[0];
+const color1 = palette[1];
+const color2 = palette[2];
+const color3 = palette[3];
 ---
 
 <html lang="en">
@@ -9,27 +17,68 @@ import {COLOR_1, COLOR_2} from "./const.js"
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Home</title>
-		<style define:vars={{COLOR_1, COLOR_2}}>
+		<style define:vars={{color0, color1, color2, color3}}>
 			* {
 				font-family: Calibri, "Times New Roman", Times, serif;
 			}
 			body {
 				margin: 0;
+				background-color: var(--color0);
 			}
-			#ribbon {
-				background-color: var(--COLOR_1);
-				/* box-sizing: "border-box"; */
-				/* margin-left: 0px; */
-				/* margin-right: 0px; */
-				/* margin-top: 0px; */
-				width: 100%;
+			.ribbon1 {
+				box-sizing: border-box;
+				background-color: var(--color0);
+				color: var(--color3);
+				margin: 0;
+				padding: 0;
+				border-color: var(--color0);
+				border-style: solid;
+			}
+			.ribbon2 {
+				box-sizing: border-box;
+				background-color: var(--color1);
+				color: var(--color3);
+				margin: 0;
+				padding: 0;
+				border-color: var(--color1);
+				border-style: solid;
+			}
+			.ribbon3 {
+				box-sizing: border-box;
+				background-color: var(--color2);
+				color: var(--color0);
+				margin: 0;
+				padding: 0;
+				border-color: var(--color2);
+				border-style: solid;
+			}
+			.ribbon4 {
+				box-sizing: border-box;
+				background-color: var(--color3);
+				color: var(--color0);
+				margin: 0;
+				padding: 0;
+				border-color: var(--color3);
+				border-style: solid;
 			}
 		</style>
 	</head>
 	<body>
-		<div id="ribbon">
+		<div class="ribbon1">
 			<a href="/">Home</a>
-			<h1>Test</h1>
+			<h1>My bgcolor is {palette[0]}</h1>
+		</div>
+		<div class="ribbon2">
+			<!-- <a href="/">Home</a> -->
+			<h1>My bgcolor is {color1}</h1>
+		</div>
+		<div class="ribbon3">
+			<!-- <a href="/">Home</a> -->
+			<h1>My bgcolor is {color2}</h1>
+		</div>
+		<div class="ribbon4">
+			<!-- <a href="/">Home</a> -->
+			<h1>My bgcolor is {color3}</h1>
 		</div>
 	</body>
 </html>
