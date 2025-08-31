@@ -9,17 +9,21 @@ import {COLOR_1, COLOR_2} from "./const.js"
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Home</title>
-		<style>
+		<style define:vars={{COLOR_1, COLOR_2}}>
 			* {
 				font-family: Calibri, "Times New Roman", Times, serif;
 			}
-			h1 {
-				color: {COLOR_1}
+			#ribbon {
+				background-color: var(--COLOR_1);
+				/* margin-top: 0px; */
+				width: 100%;
 			}
 		</style>
 	</head>
 	<body>
-		<a href="/">Home</a>
-		<h1>Test</h1>
+		<div id="ribbon">
+			<a href="/">Home</a>
+			<h1>Test</h1>
+		</div>
 	</body>
 </html>
