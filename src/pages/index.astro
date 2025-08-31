@@ -1,6 +1,9 @@
 ---
-import {themes} from "./const/colors.js"
-const theme = themes["home"];
+import {themes} from "./const/themes.js"
+const themename = "home";
+
+// auto
+const theme = themes[themename];
 const choice = theme["choice"];
 const subtheme = theme["subtheme"][choice];
 const palette = subtheme["palette"];
