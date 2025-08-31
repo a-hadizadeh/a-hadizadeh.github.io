@@ -81,3 +81,33 @@ export const themes = {
 		],
 	},
 }
+
+function css_propval(prop, val) {
+	return prop + ': ' + val + ';';
+}
+export function palette_use(palette, use) {
+	const color0 = palette[0];
+	const color1 = palette[1];
+	const color2 = palette[2];
+	const color3 = palette[3];
+	if (use === 0) {
+		return	css_propval('border-color', color0) +
+				css_propval('background-color', color0) + 
+				css_propval('color', color3);
+	}
+	if (use === 1) {
+		return	css_propval('border-color', color1) +
+				css_propval('background-color', color1) + 
+				css_propval('color', color3);
+	}
+	if (use === 2) {
+		return	css_propval('border-color', color2) +
+				css_propval('background-color', color2) + 
+				css_propval('color', color0);
+	}
+	if (use === 3) {
+		return	css_propval('border-color', color3) +
+				css_propval('background-color', color3) + 
+				css_propval('color', color0);
+	}
+}

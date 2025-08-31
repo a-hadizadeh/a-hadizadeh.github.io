@@ -1,85 +1,59 @@
 ---
-import {themes} from "./const/themes.js"
-const themename = "home";
+import {themes, palette_use} from "../const/themes.js"
+const themename 	= "home";
 
 // auto
-const theme = themes[themename];
-const choice = theme["choice"];
-const subtheme = theme["subtheme"][choice];
-const palette = subtheme["palette"];
-const color0 = palette[0];
-const color1 = palette[1];
-const color2 = palette[2];
-const color3 = palette[3];
+const theme			= themes[themename];
+const choice		= theme["choice"];
+const subtheme		= theme["subtheme"][choice];
+const palette		= subtheme["palette"];
+const color0		= palette[0];
+const color1		= palette[1];
+const color2		= palette[2];
+const color3		= palette[3];
+const paletteuse0	= palette_use(palette, 0);
+const paletteuse1	= palette_use(palette, 1);
+const paletteuse2	= palette_use(palette, 2);
+const paletteuse3	= palette_use(palette, 3);
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="../../src/assets/logo1000.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Home</title>
 		<style define:vars={{color0, color1, color2, color3}}>
-			* {
+			*{
 				font-family: Calibri, "Times New Roman", Times, serif;
 			}
-			body {
+			body{
 				margin: 0;
 				background-color: var(--color0);
 			}
-			.ribbon1 {
+			.ribbon{
 				box-sizing: border-box;
-				background-color: var(--color0);
-				color: var(--color3);
 				margin: 0;
 				padding: 0;
-				border-color: var(--color0);
-				border-style: solid;
-			}
-			.ribbon2 {
-				box-sizing: border-box;
-				background-color: var(--color1);
-				color: var(--color3);
-				margin: 0;
-				padding: 0;
-				border-color: var(--color1);
-				border-style: solid;
-			}
-			.ribbon3 {
-				box-sizing: border-box;
-				background-color: var(--color2);
-				color: var(--color0);
-				margin: 0;
-				padding: 0;
-				border-color: var(--color2);
-				border-style: solid;
-			}
-			.ribbon4 {
-				box-sizing: border-box;
-				background-color: var(--color3);
-				color: var(--color0);
-				margin: 0;
-				padding: 0;
-				border-color: var(--color3);
 				border-style: solid;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="ribbon1">
+		<div class="ribbon" style={`${paletteuse0}`}>
 			<a href="/">Home</a>
 			<h1>My bgcolor is {palette[0]}</h1>
 		</div>
-		<div class="ribbon2">
+		<div class="ribbon" style={`${paletteuse1}`}>
 			<!-- <a href="/">Home</a> -->
 			<h1>My bgcolor is {color1}</h1>
 		</div>
-		<div class="ribbon3">
+		<div class="ribbon" style={`${paletteuse2}`}>
 			<!-- <a href="/">Home</a> -->
 			<h1>My bgcolor is {color2}</h1>
 		</div>
-		<div class="ribbon4">
+		<div class="ribbon" style={`${paletteuse3}`}>
 			<!-- <a href="/">Home</a> -->
 			<h1>My bgcolor is {color3}</h1>
 		</div>
