@@ -1,6 +1,6 @@
 export const themes = {
 	home: {
-		choice: 1,
+		choice: 0,
 		subtheme: [
 			{// 0
 				palette: [
