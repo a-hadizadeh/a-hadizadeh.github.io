@@ -1,6 +1,6 @@
 export const themes = {
 	home: {
-		choice: 0,
+		choice: 2,
 		subtheme: [
 			{// 0
 				palette: [
@@ -16,6 +16,14 @@ export const themes = {
 					"#B58876",
 					"#913535",
 					"#283148"
+				],
+			},
+			{// 2
+				palette: [
+					"#EEE2DE",
+					"#EA906C",
+					"#913535",
+					"#2B2A4C"
 				],
 			},
 		],
